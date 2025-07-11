@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ static_url('index.css') }}">
+    <title>e-Portfolio</title>
+</head>
+<body>
+    <header id="header">Change my background color by clicking the button below</header>
+    <input type="button" value="CLICK ME" onclick="changeHeaderBackgroundColor()"/>
+    <nav>
+        <ul>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="experiences.html">Experiences</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Adil Rahman</h1>
+        <img class="image" src="{{ static_url('adil.jpg') }}" alt="Picture of Adil">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, expedita odio nostrum laboriosam fugit aliquam voluptatem voluptas laudantium et quam voluptatibus obcaecati repudiandae, aspernatur non! Optio doloribus vero porro aperiam, dolorum delectus qui ab saepe sapiente aut recusandae dignissimos at obcaecati molestiae laborum cum beatae ipsa et architecto similique repellendus.</p>
+    </main>
+
+</body>
+<script src="{{ static_url('script.js') }}"></script>
+</html>
