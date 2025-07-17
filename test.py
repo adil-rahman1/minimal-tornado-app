@@ -1,15 +1,20 @@
 import unittest
 from tornado.testing import AsyncHTTPTestCase
 from app import make_app
+import re
 
 class TestMainHandler(AsyncHTTPTestCase):
     def get_app(self):
         return make_app()
 
-    def test_homepage(self):
+    def test_background_colour_changer(self):
         response = self.fetch('/')
         self.assertEqual(response.code, 200)
         self.assertIn(b"Change my background color by clicking the button below", response.body)
+
+    def test_nav_in_index(self):
+        response = self.fetch('/')
+        self.assertIn(b"<nav>", response.body)
 
 if __name__ == "__main__":
     unittest.main()
