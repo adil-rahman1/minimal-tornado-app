@@ -32,11 +32,6 @@ jobs:
     - name: Test with unittest
       run: |
         python3 test.py
-    - name: Install SSH Key
-    uses: shimataro/ssh-key-action@v2
-    with:
-      key: ${{ secrets.SSH_PRIVATE_KEY }}
-      known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
     
   deploy:
     needs: test
@@ -48,7 +43,7 @@ jobs:
         with:
           host: ${{secrets.SSH_HOST }}
           username: ubuntu
-          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/minimal-tornado-app || git clone https://github.com/adil-rahman1/minimal-tornado-app
             cd ~/minimal-tornado-app
