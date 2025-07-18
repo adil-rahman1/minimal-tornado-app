@@ -1,0 +1,7 @@
+__pycache__/
+.github/
+bin/
+include/
+lib/
+pyvenv.cfg
+test.py
